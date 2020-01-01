@@ -4,8 +4,9 @@ function handleSearchClick() {
   $('form').submit(function(e) {
     e.preventDefault();
     const searchTerm = document.getElementById('search').value;
+    const youTubeSearch = 'what is' + searchTerm
     getNasaImageData(searchTerm);
-    getYouTubeData(searchTerm);
+    getYouTubeData(youTubeSearch);
     getWikiData(searchTerm);
   })
 }
@@ -25,17 +26,22 @@ function displayNasaData(json) {
 }
 
 function getYouTubeData(searchTerm) {
-  fetch(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyBI-NvmjhQbV-B-JX5ayx1Vyt_spkuXhEw&type=video&safeSearch=strict&order=Relevance`)
+  fetch(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyBI-NvmjhQbV-B-JX5ayx1Vyt_spkuXhEw&type=video&safeSearch=strict&order=Relevance&videoEmbeddable=true`)
   .then(response => response.json())
-  .then(responseJson => console.log(responseJson));
+  .then(responseJson => displayYouTubeData(responseJson));
 }
 
-function displayYouTubeData() {
-
+function displayYouTubeData(json) {
+  console.log(json);
+  for (let i = 0; i < json.items.length; i++) {
+    $('.js-videos').append(`
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${json.items[i].id.videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `);
+  };
 }
 
 function getWikiData(searchTerm) {
-  fetch(`https:/en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exchars=1200&exsectionformat=plain&origin=*&indexpageids=1`)
+  fetch(`https:/en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exsectionformat=plain&origin=*&indexpageids=1`)
   .then(response => response.json())
   .then(responseJson => displayWikiData(responseJson));
 }
@@ -45,7 +51,7 @@ function displayWikiData(json) {
   $('.js-wiki').append(`
     <h2>${json.query.pages[pageID].title}</h2>
     ${json.query.pages[pageID].extract}
-  `)
+  `);
 }
 
 function init() {
