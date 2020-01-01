@@ -4,8 +4,8 @@ function handleSearchClick() {
   $('form').submit(function(e) {
     e.preventDefault();
     const searchTerm = document.getElementById('search').value;
-    // getNasaImageData(searchTerm);
-    // getYouTubeData(searchTerm);
+    getNasaImageData(searchTerm);
+    getYouTubeData(searchTerm);
     getWikiData(searchTerm);
   })
 }
@@ -31,7 +31,7 @@ function displayYouTubeData() {
 }
 
 function getWikiData(searchTerm) {
-  fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exchars=1200&exsectionformat=plain`)
+  fetch(`https:/en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exchars=1200&exsectionformat=plain&origin=*`)
   .then(response => response.json())
   .then(responseJson => console.log(responseJson));
 }
