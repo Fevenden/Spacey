@@ -32,7 +32,6 @@ function getYouTubeData(searchTerm) {
 }
 
 function displayYouTubeData(json) {
-  console.log(json);
   for (let i = 0; i < json.items.length; i++) {
     $('.js-videos').append(`
       <iframe width="560" height="315" src="https://www.youtube.com/embed/${json.items[i].id.videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
