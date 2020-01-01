@@ -17,10 +17,9 @@ function getNasaImageData(searchTerm) {
 }
 
 function displayNasaData(json) {
-  console.log(json);
   for (let i = 0; i < 10; i++) {
     $('.js-images').append(`
-      <img src="${json.collection.items[i].links[0].href}" alt="${json.collection.items[i].data[0].description_508}">
+      <img src="${json.collection.items[i].links[0].href}" alt="${json.collection.items[i].data[0].description_508} class="spaceImg">
     `)
   }
 }
@@ -36,13 +35,17 @@ function displayYouTubeData() {
 }
 
 function getWikiData(searchTerm) {
-  fetch(`https:/en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exchars=1200&exsectionformat=plain&origin=*`)
+  fetch(`https:/en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exchars=1200&exsectionformat=plain&origin=*&indexpageids=1`)
   .then(response => response.json())
-  .then(responseJson => console.log(responseJson));
+  .then(responseJson => displayWikiData(responseJson));
 }
 
-function displayWikiData() {
-
+function displayWikiData(json) {
+  let pageID = `${json.query.pageids[0]}`
+  $('.js-wiki').append(`
+    <h2>${json.query.pages[pageID].title}</h2>
+    ${json.query.pages[pageID].extract}
+  `)
 }
 
 function init() {
