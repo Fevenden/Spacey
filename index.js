@@ -13,11 +13,16 @@ function handleSearchClick() {
 function getNasaImageData(searchTerm) {
   fetch(`https://images-api.nasa.gov/search?q=${searchTerm}&media_type=image&keywords=space&page=1`)
   .then(response => response.json())
-  .then(responseJson => console.log(responseJson));
+  .then(responseJson => displayNasaData(responseJson));
 }
 
-function displayNasaData() {
-
+function displayNasaData(json) {
+  console.log(json);
+  for (let i = 0; i < 10; i++) {
+    $('.js-images').append(`
+      <img src="${json.collection.items[i].links[0].href}" alt="${json.collection.items[i].data[0].description_508}">
+    `)
+  }
 }
 
 function getYouTubeData(searchTerm) {
