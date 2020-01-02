@@ -21,16 +21,19 @@ h1 {
     border: 2px solid black;
     /* font-size: 18px; */
 }
-.searchButton {
+button {
     margin-top: 20px;
     width: 150px;
-    align-self: center;
     height: 50px;
     font-size: 18px;
     border-radius: 25px;
     color: white;
     background-color: black;
     border: none;
+}
+
+.searchButton {
+    align-self: center;
 }
 
 .js-wiki {
@@ -47,10 +50,35 @@ h2 {
     color: red;
 }
 
-.nasaImages {
+.js-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.nasaImages{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    overflow: hidden;
+    max-height: 30%;
+}
+
+.buttonContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+}
+
+.spaceImg {
+    max-width: 90%
+}
+
+.next, .previous {
+    display: inline-block;
 }
 
 .js-videos {
@@ -62,11 +90,6 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-}
-
-img {
-    width:500px;
-    max-width: 90%;
 }
 
 iframe {
@@ -81,4 +104,8 @@ li {
 
 .hidden {
     display: none;
+}
+
+.show {
+    display: initial;
 }
