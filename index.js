@@ -33,16 +33,10 @@ function apiCall(url) {
 }
 
 function displayNasaData(json) {
-  if(json.collection.items.length < 5) {
+  if(json.collection.items.length < 10) {
     $('.js-error').append('make sure you are searching for a space related term');
   } else {
-    $('.js-images, .js-wiki, .js-videos').empty();
-    $('.searchButton').addClass('buttonStyled').empty();
-    $('#search').addClass('searchStyled');
-    $('.showMe').removeClass('hidden');
-    $('header').addClass('styleMe');
-    $('.hideMe').addClass('hidden');
-    $('h1').removeClass('title')
+    setUpPage()
     apiCall(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyBI-NvmjhQbV-B-JX5ayx1Vyt_spkuXhEw&type=video&safeSearch=strict&order=Relevance&videoEmbeddable=true&relevanceLanguage=en&topidId=/m/01k8wb&videoCategoryId=27`).then(response => displayYouTubeData(response));
     apiCall(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exsectionformat=plain&origin=*&indexpageids=1&exintro=true`).then(response => displayWikiData(response));
     for (let i = 0; i < maxQ; i++) {
@@ -54,6 +48,15 @@ function displayNasaData(json) {
       `);
     };
   }
+}
+
+function setUpPage() {
+  $('.js-images, .js-wiki, .js-videos').empty();
+    $('form, .searchButton, #search, header').addClass('styled')
+    $('.searchButton').empty()
+    $('.showMe').removeClass('hidden');
+    $('.hideMe').addClass('hidden');
+    $('h1').removeClass('title')
 }
 
 function handleNextPrevClick() {
@@ -93,7 +96,7 @@ function displayWikiData(json) {
   let pageID = `${json.query.pageids[0]}`;
   $('.js-wiki').append(`
     <h2>${json.query.pages[pageID].title}</h2>
-    <p>${json.query.pages[pageID].extract} Read more at <a href="https://en.wikipedia.org/wiki/${json.query.pages[pageID].title}">Wikipedia</a>.</p>
+    ${json.query.pages[pageID].extract} <p>Read more at <a href="https://en.wikipedia.org/wiki/${json.query.pages[pageID].title}">Wikipedia</a>.</p>
   `);
 }
 
