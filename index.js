@@ -38,9 +38,8 @@ function displayNasaData(json) {
   } else {
     $('.js-images, .js-wiki, .js-videos').empty();
     $('.searchButton').addClass('buttonStyled').empty();
-    $('form').addClass('formStyled')
     $('#search').addClass('searchStyled');
-    $('.showMe, main').removeClass('hidden');
+    $('.showMe').removeClass('hidden');
     $('header').addClass('styleMe');
     $('.hideMe').addClass('hidden');
     $('h1').removeClass('title')
