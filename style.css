@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
 header {
@@ -11,8 +12,8 @@ header {
 }
 
 .styleMe {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: fixed;
     flex-direction: row;
     justify-content: space-around;
@@ -30,13 +31,14 @@ main {
 
 h1 {
     flex-grow: 1;
+    font-family: 'Raleway';
 }
 
 #search.searchStyled {
     display: inline-block;
     margin-top: 0;
-    flex-grow: 2;
-    width: 40%;
+    flex-grow: 1;
+    margin-left: 5px;
 }
 
 .buttonStyled {
@@ -52,6 +54,10 @@ h1 {
     align-self: auto;
 }
 
+p {
+    line-height: 24px;
+}
+
 #search {
     margin-top: 20px;
     height: 35px;
@@ -62,8 +68,8 @@ h1 {
 
 button {
     margin-top: 20px;
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 35px;
     font-size: 18px;
     border-radius: 25px;
     color: white;
@@ -84,6 +90,7 @@ button {
 
 h2 {
     align-self: center;
+    font-family: 'Raleway';
 }
 
 .js-error {
@@ -100,7 +107,6 @@ h2 {
     display: flex;
     flex-direction:column;
     justify-content: space-around;
-    overflow: hidden;
 }
 
 .buttonContainer {
@@ -118,6 +124,7 @@ h2 {
 .spaceImg {
     max-width: 90%;
     cursor: pointer;
+    max-height: 20%;
 }
 
 .next, .previous {
