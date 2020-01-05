@@ -1,5 +1,5 @@
 'use strict';
-const maxQ = 10;
+const maxQ = 5;
 let searchTerm;
 let youTubeSearch;
 let imgCounter = 0;
@@ -33,8 +33,14 @@ function apiCall(url) {
 }
 
 function displayNasaData(json) {
-  if(json.collection.items.length < 10) {
-    $('.js-error').append('make sure you are searching for a space related term');
+  if(json.collection.items.length < maxQ) {
+    $('.js-error').append('Make sure you are searching for a space related term.');
+  } else if (searchTerm === " ") {
+    $('.js-error').append('Make sure you are searching for a space related term.')
+  } else if (searchTerm === "hey") {
+    $('.js-error').append('Make sure you are searching for a space related term.')
+  } else if (searchTerm === "what") {
+    $('.js-error').append('Make sure you are searching for a space related term.')
   } else {
     setUpPage()
     apiCall(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyBI-NvmjhQbV-B-JX5ayx1Vyt_spkuXhEw&type=video&safeSearch=strict&order=Relevance&videoEmbeddable=true&relevanceLanguage=en&topidId=/m/01k8wb&videoCategoryId=27`).then(response => displayYouTubeData(response));
@@ -77,7 +83,7 @@ function handleNextPrevClick() {
   $(array[imgCounter]).removeClass('show').addClass('hidden');
   imgCounter -- 
   if (imgCounter === -1) {
-    imgCounter = 9;
+    imgCounter = 4;
   };
   $(array[imgCounter]).removeClass('hidden').addClass('show');
   })
