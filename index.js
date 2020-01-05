@@ -36,9 +36,13 @@ function displayNasaData(json) {
   if(json.collection.items.length < 10) {
     $('.js-error').append('make sure you are searching for a space related term');
   } else {
-    $('.js-images').empty();
-    $('.js-wiki').empty();
-    $('.js-videos').empty()
+    $('.js-images, .js-wiki, .js-videos').empty();
+    $('.searchButton').addClass('buttonStyled').empty();
+    $('form').addClass('formStyled')
+    $('#search').addClass('searchStyled');
+    $('.showMe').removeClass('hidden');
+    $('header').addClass('styleMe');
+    $('.hideMe').addClass('hidden');
     apiCall(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyBI-NvmjhQbV-B-JX5ayx1Vyt_spkuXhEw&type=video&safeSearch=strict&order=Relevance&videoEmbeddable=true&relevanceLanguage=en&topidId=/m/01k8wb&videoCategoryId=27`).then(response => displayYouTubeData(response));
     apiCall(`https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&titles=${searchTerm}&prop=extracts&exsectionformat=plain&origin=*&indexpageids=1&exintro=true&explaintext=true`).then(response => displayWikiData(response));
     for (let i = 0; i < maxQ; i++) {

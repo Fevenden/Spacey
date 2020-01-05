@@ -7,10 +7,49 @@ header {
     flex-direction: column;
     text-align: left;
     align-items: center;
+    transition: all 1s;
+}
+
+.styleMe {
+    padding-left: 30px;
+    padding-right: 30px;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+main {
+    margin-top: 60px;
 }
 
 h1 {
-    margin-top: 50px
+    flex-grow: 1;
+}
+
+#search.searchStyled {
+    display: inline-block;
+    margin-top: 0;
+    flex-grow: 2;
+    width: 40%;
+}
+
+.buttonStyled {
+    border: 1px solid white;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-top: 0px;
+    background-image: url('images/searchIcon.png');
+    background-color: white;
+    background-size: cover;
+    align-self: auto;
 }
 
 #search {
@@ -19,8 +58,8 @@ h1 {
     padding: 10px;
     border-radius: 25px;
     border: 2px solid black;
-    /* font-size: 18px; */
 }
+
 button {
     margin-top: 20px;
     width: 150px;
@@ -30,6 +69,7 @@ button {
     color: white;
     background-color: black;
     border: none;
+    cursor: pointer;
 }
 
 .searchButton {
@@ -39,7 +79,7 @@ button {
 .js-wiki {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 10%;
 }
 
 h2 {
@@ -54,8 +94,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
 }
 
 .nasaImages{
@@ -63,7 +101,6 @@ h2 {
     flex-direction:column;
     justify-content: space-around;
     overflow: hidden;
-    max-height: 30%;
 }
 
 .buttonContainer {
@@ -73,8 +110,14 @@ h2 {
     justify-content: space-evenly;
 }
 
+.formStyled {
+    flex-direction: row;
+
+}
+
 .spaceImg {
-    max-width: 90%
+    max-width: 90%;
+    cursor: pointer;
 }
 
 .next, .previous {
@@ -84,7 +127,7 @@ h2 {
 .js-videos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 form {
