@@ -10,25 +10,28 @@
 </head>
 <body>
   <header>
-    <h1>SPACEY</h1>
-    <p class="hideMe">The cosmos at your finger tips</p>
+    <h1 class='title'>SPACEY</h1>
+    <p class="hideMe">Search for anything space related</p>
     <form>
-      <label for="search" class="hideMe">Search for anything space related</label>
       <input type="text" placeholder="Venus" id="search" required>
-      <button class="searchButton" type="submit">Search</button>
+      <button class="searchButton" type="submit"></button>
     </form>
-    <p class="js-error"></p>
   </header>
-  <main>
+  <main class='hidden'>
+    <p class="js-error"></p>
     <section class="nasaImages">
+      <h2>Images from NASA</h2>
       <ul class="js-images"></ul>
       <section class="buttonContainer">
-        <button class="previous showMe hidden">prev</button>
+        <button class="previous showMe hidden">Prev</button>
         <button class="next showMe hidden">Next</button>
       </section>
     </section>
-    <section class="js-wiki"></section>
-    <section class="js-videos"></section>
+    <div class="dataBox">
+      <section class="js-wiki"></section>
+      <section class="js-videos">
+      </section>
+    </div>
   </main>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

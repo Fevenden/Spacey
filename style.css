@@ -1,32 +1,54 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto';
+    padding: 0;
 }
 
 header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 140px;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 25px;
+    background-color: black;
     display: flex;
     flex-direction: column;
     text-align: left;
     align-items: center;
-    transition: all 1s;
+    color: rgb(0, 195, 255);
+    padding: 40px;
+}
+
+p.hideMe {
+    font-size: 20px;
+    color: white;
+}
+
+.title {
+    font-size: 50px;
+    border-bottom: 1px solid rgb(0, 195, 255);
 }
 
 .styleMe {
+    margin-top: 0;
+    padding: 0;
     padding-left: 20px;
     padding-right: 20px;
     position: fixed;
     flex-direction: row;
     justify-content: space-around;
     background-color: black;
-    color: white;
+    color: rgb(0, 195, 255);
     font-size: 12px;
     width: 100%;
     left: 0;
     top: 0;
+    border-radius: 0;
 }
 
 main {
-    margin-top: 60px;
+    margin-top: 80px
 }
 
 h1 {
@@ -41,25 +63,25 @@ h1 {
     margin-left: 5px;
 }
 
-.buttonStyled {
-    border: 1px solid white;
+.searchButton{
     padding: 0;
     height: 30px;
     width: 30px;
     display: inline-block;
     margin-top: 0px;
     background-image: url('images/searchIcon.png');
-    background-color: white;
+    background-color: rgb(0, 195, 255);
     background-size: cover;
     align-self: auto;
 }
 
 p {
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
 }
 
 #search {
-    margin-top: 20px;
+    display: inline-block;
     height: 35px;
     padding: 10px;
     border-radius: 25px;
@@ -78,32 +100,30 @@ button {
     cursor: pointer;
 }
 
-.searchButton {
-    align-self: center;
-}
-
 .js-wiki {
-    display: flex;
-    flex-direction: column;
-    padding: 10%;
+    padding: 10px;
 }
 
 h2 {
     align-self: center;
     font-family: 'Raleway';
+    font-size: 40px;
 }
 
 .js-error {
     color: red;
 }
 
-.js-images {
+.js-images, .js-wiki, .js-videos{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .nasaImages{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction:column;
     justify-content: space-around;
@@ -118,38 +138,35 @@ h2 {
 
 .formStyled {
     flex-direction: row;
-
 }
 
 .spaceImg {
-    max-width: 90%;
+    max-width: 100%;
     cursor: pointer;
-    max-height: 20%;
+    border-radius: 25px;
+    object-fit: cover;
+    height: 300px;
+    transition: 1s;
 }
 
 .next, .previous {
     display: inline-block;
 }
 
-.js-videos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
 }
 
 iframe {
-    max-width: 90%;
+    width: 100%;
+    margin: 5px;
+    border: 2px solid black;
 }
 
 li {
     list-style-type: none;
-    display: inline-block;
-    margin-left: 0px;
 }
 
 .hidden {
@@ -158,4 +175,46 @@ li {
 
 .show {
     display: initial;
+}
+
+h2 {
+    border-left: 2px solid rgb(0, 195, 255);
+    border-right: 2px solid rgb(0, 195, 255);
+}
+
+@media screen and (min-width: 1050px) {
+
+    .dataBox{
+        display: flex;
+        justify-content: center;
+    }
+
+    .js-videos {
+        width: 20%;
+        box-shadow: 5px 5px 3px grey;
+        border-radius: 25px;
+        border: 4px solid black;
+        padding: 20px;
+        margin-top: 20px;
+        height: min-content;
+    }
+
+    .js-wiki {
+        margin-right: 20px;
+        width: 40%;
+        color:  black;
+        border: 4px solid black;
+        padding: 50px;
+        border-radius: 20px;
+        margin-top: 20px;
+        box-shadow: 5px 5px 3px grey;
+    }
+    
+    .nasaImages{
+        width: 40%;
+        border-radius: 25px;
+        padding-bottom: 10px;
+        border: 4px solid black;
+        box-shadow: 5px 5px 3px grey;
+    }
 }
