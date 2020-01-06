@@ -102,7 +102,7 @@ function displayWikiData(json) {
   let pageID = `${json.query.pageids[0]}`;
   $('.js-wiki').append(`
     <h2>${json.query.pages[pageID].title}</h2>
-    ${json.query.pages[pageID].extract} <p>Read more at <a href="https://en.wikipedia.org/wiki/${json.query.pages[pageID].title}">Wikipedia</a>.</p>
+    ${json.query.pages[pageID].extract} <p>Read more at <a href="https://en.wikipedia.org/wiki/${json.query.pages[pageID].title}" target="_blank">Wikipedia</a>.</p>
   `);
 }
 
