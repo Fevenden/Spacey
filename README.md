@@ -27,7 +27,3 @@ Landing Page:
 Main Page:
 
 ![landing](images/main.png)
-
-## Checkout the Live Demo!
-
-- [Live Demo Here](https://fevenden.github.io/Spacey/)
