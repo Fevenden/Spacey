@@ -65,6 +65,7 @@ function setUpPage() {
     $('h1').removeClass('title')
 }
 
+// allows user to cycle through photos
 function handleNextPrevClick() {
   $('.next').click(function(e) {
   e.preventDefault();
