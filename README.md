@@ -8,7 +8,7 @@ I have always been fascinated by space and the possibilties it presents to us, I
 
 ## How to Use 
 
-Spacey is extremely easy to use, just enter a term into the search bar and click search. Users who use accessability features can easily search using their keyboard. Links to wikipedia are provided at the bottom of the reading section and links to youtube can be used by clicking on the titles of the videos.
+Spacey is extremely easy to use, just enter a term into the search bar and click search. Users who rely accessability features can easily search using their keyboard. cycle through the images by clicking previous and next buttons. Links to wikipedia are provided at the bottom of the reading section and links to youtube can be used by clicking on the titles of the videos.
 
 ## Technology Used
 
