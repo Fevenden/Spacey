@@ -18,7 +18,7 @@ header {
     align-items: center;
     color: rgb(0, 195, 255);
     padding: 40px;
-    box-shadow: 5px 5px 3px grey;
+    border: 2px solid rgb(0, 195, 255);
 }
 
 .title {
@@ -41,11 +41,9 @@ header.styled {
     left: 0;
     top: 0;
     border-radius: 0;
-    box-shadow: none;
-}
-
-main {
-    margin-top: 80px
+    z-index: 1;
+    border: none;
+    border-bottom: 2px solid rgb(0, 195, 255);
 }
 
 h1 {
@@ -120,6 +118,7 @@ button:active, .searchButton.styled:active {
 }
 
 .js-error {
+    margin-top: 80px;
     color: red;
     text-align: center;
 }
@@ -131,7 +130,7 @@ button:active, .searchButton.styled:active {
 }
 
 .nasaImages{
-    margin-top: 20px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -218,6 +217,18 @@ a:active {
 
 @media screen and (min-width: 1050px) {
 
+    body {
+        background-color: rgb(34, 34, 34);
+    }
+
+    main {
+        position: absolute;
+        background-color: rgb(34, 34, 34);
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
     .dataBox{
         display: flex;
         justify-content: center;
@@ -225,30 +236,30 @@ a:active {
 
     .js-videos {
         width: 20%;
-        box-shadow: 5px 5px 3px grey;
+        background-color: white;
         border-radius: 25px;
-        border: 4px solid black;
         padding: 20px;
         margin-top: 20px;
         height: min-content;
+        box-shadow: 5px 5px 3px black;
     }
 
     .js-wiki {
         margin-right: 20px;
         width: 40%;
         color:  black;
-        border: 4px solid black;
+        background-color: white;
         padding: 50px;
         border-radius: 20px;
         margin-top: 20px;
-        box-shadow: 5px 5px 3px grey;
+        box-shadow: 5px 5px 3px black;
     }
     
     .nasaImages{
+        background-color: white;
         width: 40%;
         border-radius: 25px;
         padding-bottom: 10px;
-        border: 4px solid black;
-        box-shadow: 5px 5px 3px grey;
+        box-shadow: 5px 5px 3px black;
     }
 }
