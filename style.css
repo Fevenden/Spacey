@@ -13,7 +13,6 @@ header {
     width: 500px;
     max-width: 100%;
     border-radius: 25px;
-    /* background-color: black; */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -218,7 +217,7 @@ a:active {
 }
 
 body {
-        background-color: black;
+     background-color: black;
 }
 
 main {
