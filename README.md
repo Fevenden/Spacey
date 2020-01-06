@@ -14,11 +14,11 @@ Spacey is extremely easy to use, just enter a term into the search bar and click
 
 Landing Page:
 
-![landing page](images/Screenshot(1).png)
+![landing](images/landing.png)
 
 Main Page:
 
-![main page](images/Screenshot(2).png)
+![landing](images/main.png)
 
 ## Checkout the Live Demo!
 
