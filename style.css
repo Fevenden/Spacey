@@ -2,16 +2,18 @@
     box-sizing: border-box;
     font-family: 'Roboto';
     padding: 0;
-}
+}   
 
 header {
+    background-image: url('images/background.jpg');
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
     margin-top: 140px;
     width: 500px;
     max-width: 100%;
     border-radius: 25px;
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -215,51 +217,67 @@ a:active {
     color: blue;
 }
 
+body {
+        background-color: black;
+}
+
+main {
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dataBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.js-videos {
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
+    height: min-content;
+    width: 90%;
+}
+
+.js-wiki {
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.nasaImages{
+    background-color: white;
+    width: 90%;
+    border-radius: 25px;
+    padding: 10px;
+}
+
 @media screen and (min-width: 1050px) {
 
-    body {
-        background-color: rgb(34, 34, 34);
-    }
-
-    main {
-        position: absolute;
-        background-color: rgb(34, 34, 34);
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
     .dataBox{
-        display: flex;
+        flex-direction: row;
         justify-content: center;
+        align-items: initial;
     }
 
     .js-videos {
         width: 20%;
-        background-color: white;
-        border-radius: 25px;
-        padding: 20px;
-        margin-top: 20px;
-        height: min-content;
-        box-shadow: 5px 5px 3px black;
     }
 
     .js-wiki {
         margin-right: 20px;
         width: 40%;
-        color:  black;
-        background-color: white;
         padding: 50px;
-        border-radius: 20px;
-        margin-top: 20px;
-        box-shadow: 5px 5px 3px black;
     }
     
     .nasaImages{
-        background-color: white;
         width: 40%;
-        border-radius: 25px;
-        padding-bottom: 10px;
-        box-shadow: 5px 5px 3px black;
     }
 }
