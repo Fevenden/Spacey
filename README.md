@@ -10,6 +10,14 @@ I have always been fascinated by space and the possibilties it presents to us, I
 
 Spacey is extremely easy to use, just enter a term into the search bar and click search. Users who use accessability features can easily search using their keyboard. 
 
+## Technology Used
+
+HTML/CSS/JavaScript/jQuery
+
+## Checkout the Live Demo!
+
+- [Live Demo Here](https://fevenden.github.io/Spacey/)
+
 ## Screenshots
 
 Landing Page:
