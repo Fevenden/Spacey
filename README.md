@@ -16,7 +16,7 @@ HTML/CSS/JavaScript/jQuery
 
 ## Checkout the Live Demo!
 
-- [Live Demo Here](https://fevenden.github.io/Spacey/)
+- [Live Demo Here](https://f3ve.github.io/Spacey/)
 
 ## Screenshots
 
